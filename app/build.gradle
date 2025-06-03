@@ -20,7 +20,9 @@ dependencies {
     testImplementation libs.junit.jupiter
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    // Mocking framework for unit tests.
+    testImplementation 'org.junit.platform:junit-platform-suite-api:1.13.0'
+    testImplementation 'org.junit.platform:junit-platform-suite-engine:1.13.0'
+
     testImplementation 'org.mockito:mockito-core:5.18.0'
 
     // This dependency is used by the application.
@@ -39,7 +41,9 @@ application {
     mainClass = 'test2.App'
 }
 
-tasks.named('test') {
-    // Use JUnit Platform for unit tests.
+test {
     useJUnitPlatform()
+    exclude '**/FirstStepOfIntegrationTest.class'
+    exclude '**/SecondStepOfIntegrationTest.class'
+    exclude '**/ThirdStepOfIntegrationTest.class'
 }
