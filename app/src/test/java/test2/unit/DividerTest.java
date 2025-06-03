@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import test2.calulator.multiplier.*;
@@ -15,8 +16,8 @@ class DividerTest {
 
     private IDivider divider;
 
-    private IMultiplier multiplier;
-    private ISubstractor substractor;
+    @Mock private IMultiplier multiplier;
+    @Mock private ISubstractor substractor;
 
     @BeforeEach
     void setUp() {

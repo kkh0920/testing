@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import test2.calulator.adder.*;
@@ -15,10 +16,13 @@ class SubstractorTest {
 
     private ISubstractor substractor;
 
+    @Mock private IAdder adder;
+    @Mock private IFlipper flipper;
+
     @BeforeEach
     void setUp() {
-        IAdder adder = Mockito.mock(IAdder.class);
-        IFlipper flipper = Mockito.mock(IFlipper.class);
+        adder = Mockito.mock(IAdder.class);
+        flipper = Mockito.mock(IFlipper.class);
 
         Mockito.when(adder.add(Mockito.anyInt(), Mockito.anyInt())).thenAnswer(invocation -> {
             int arg1 = invocation.getArgument(0);

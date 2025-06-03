@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import test2.calulator.adder.*;
@@ -17,8 +17,8 @@ class MultiplierTest {
 
     private IMultiplier multiplier;
 
-    private IAdder adder;
-    private IFlipper flipper;
+    @Mock private IAdder adder;
+    @Mock private IFlipper flipper;
 
     @BeforeEach
     void setUp() {
