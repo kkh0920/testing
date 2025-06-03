@@ -40,7 +40,7 @@ public class FirstStepOfIntegrationTest {
 
     @ParameterizedTest
     @CsvSource({
-        "10, 2, 51",
+        "10, 2, 5",
         "10, -2, -5",
         "0, 1, 0",
         "15, 2, 7",
